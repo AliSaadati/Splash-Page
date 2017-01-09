@@ -25,11 +25,12 @@ ul {
 
 .navbar li a {
     text-decoration: none;
-    text-align: center;
+    font-size: 1.5em;
+    line-height: 60px;
     display: block;
-    padding: 19.5px 15px;
+    padding: 0 15px;
     color: white;
-    font-family: Monaco, Lucida Console;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .navbar li a:hover {
@@ -98,12 +99,12 @@ ul {
 
 .script {
     font-size: 7.9em;
-    font-family: "Brush-Script-MT", cursive;
+    font-family: "Arial Black";
 }
 
 .slab {
     font-size: 7em;
-    font-family: "Arial Black";
+    font-family: Brush, cursive;
 }
 
 
@@ -160,7 +161,7 @@ div.menu div.strokes {
 
 .dropdown {
     background-color: rgba(80, 80, 80, .7);
-    width: 150px;
+    width: 170px;
     visibility: hidden;
     opacity: 0;
     transition: .3s;
@@ -174,6 +175,7 @@ div.menu div.strokes {
 }
 
 .dropdown ul li a {
+    line-height: .8em;
     padding: .8em;
     float: none;
     display: block;
@@ -191,6 +193,11 @@ div.menu div.strokes {
     100% {
         transform: scale(1);
     }
+}
+
+@font-face {
+    font-family: Brush;
+    src: url(Brusher-Regular.ttf);
 }
 
 
