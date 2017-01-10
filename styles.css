@@ -1,7 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Lora', serif;
 }
+
+
+/***** Navigation Bar *****/
 
 .navigation {
     position: relative;
@@ -11,7 +15,7 @@
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: rgba(80, 80, 80, .7);
+    background-color: rgba(80, 80, 80, .75);
     z-index: 1;
 }
 
@@ -23,19 +27,38 @@ ul {
     float: right;
 }
 
+.navbar > ul li li {
+    display: none;
+    float: none;
+}
+
+.navbar > ul li li a {
+    border-top: 1px solid rgba(10, 10, 10, .2);
+    height: 59px;
+}
+
+.navbar > ul ul {
+    position: absolute;
+    background-color: rgba(80, 80, 80, .75);
+}
+
+.navbar > ul li:hover li {
+    display: block;
+}
+
 .navbar li a {
     text-decoration: none;
     font-size: 1.5em;
     line-height: 60px;
     display: block;
     padding: 0 15px;
-    color: white;
+    color: lightyellow;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 .navbar li a:hover {
     background-color: black;
-    transition: .5s;
+    transition: .35s;
 }
 
 .logo {
@@ -57,9 +80,179 @@ ul {
     float: right;
 }
 
+div.menu {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    float: left;
+    margin: 20px 0 0px 17px;
+}
+
+.hamburger {
+    width: 60px;
+    height: 100%;
+    float: left;
+    transition: .5s;
+    visibility: hidden;
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger:hover {
+    background-color: black;
+}
+
+div.menu div.strokes {
+    width: 100%;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: lightyellow;
+    transition: transform 0.3s, opacity 0.1s;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateX(-42px);
+}
+
+.animate0 {
+    transform: rotate(45deg) translateY(7px) translateX(7px);
+}
+
+.animate2 {
+    transform: rotate(-45deg) translateY(-5px) translateX(4px);
+}
+
+.dropdown {
+    position: absolute;
+    background-color: rgba(80, 80, 80, .75);
+    top: 60px;
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .35s;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown ul li a {
+    line-height: .8em;
+    padding: .8em;
+    float: none;
+    display: block;
+    text-align: left;
+    border-top: 1px solid rgba(10, 10, 10, .2);
+}
+
+.dropdown ul li {
+    position: relative;
+}
+
+.dropdown ul ul {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    height: 0px;
+}
+
+#dropdown-r+ul li a {
+    background-color: rgba(10, 10, 10, .4);
+    text-indent: 12px;
+    line-height: 0em;
+}
+
+#dropdown-r+ul li a:hover {
+    background-color: black;
+}
+
+#dropdown-r::after {
+    float: right;
+    content: "...";
+}
+
+#dropdown-r+.show-rsm {
+    display: block;
+    height: inherit;
+}
+
+
+/****** Content > Title *****/
+
+.title {
+    position: relative;
+    height: 700px;
+    background-image: url(Background.png);
+    min-width: 670px;
+    text-align: center;
+}
+
+.titlecontainer {
+    position: absolute;
+    top: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: lightgoldenrodyellow;
+}
+
+.slab {
+    font-size: 9em;
+    margin-bottom: 30px;
+    font-family: 'Fredericka the Great', serif;
+    line-height: .9;
+    text-shadow: -0px -15px 10px black;
+}
+
+.script {
+    font-size: 7em;
+    font-family: Brush, cursive;
+    line-height: .8;
+    text-shadow: 0px -5px black;
+}
+
+
+/****** Content > About ******/
+
+.about {
+    padding: 50px;
+    font-family: inherit;
+    font-size: 2em;
+}
+
+
+/***** Animations *****/
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/***** Fonts *****/
+
+@font-face {
+    font-family: Brush;
+    src: url(Brusher-Regular.ttf);
+}
+
+
+/***** Responsive Design *****/
+
 @media screen and (max-width: 720px) {
     .navbar > ul li {
-        visibility: hidden;
+        display: none;
     }
     .logo {
         margin-left: 45%;
@@ -75,129 +268,9 @@ ul {
         float: left;
         margin-left: 25px;
     }
-}
-
-.first {
-    position: relative;
-    height: 1200px;
-    background-image: url(11178g-red-and-blue-picture-in-hd.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.titlecontainer {
-    position: absolute;
-    margin-top: 120px;
-    display: inline-block;
-    background-color: rgba(200, 200, 200, .5);
-}
-
-.title {
-    color: lightyellow;
-    text-align: center;
-}
-
-.script {
-    font-size: 7.9em;
-    font-family: "Arial Black";
-}
-
-.slab {
-    font-size: 7em;
-    font-family: Brush, cursive;
-}
-
-
-/****** Menu ******/
-
-div.menu {
-    position: relative;
-    width: 35px;
-    height: 25px;
-    float: left;
-    margin: 17px 0 0px 25px;
-    cursor: pointer;
-}
-
-.hamburger {
-    width: 85px;
-    height: 100%;
-    float: left;
-    transition: .5s;
-    visibility: hidden;
-    display: none;
-}
-
-.hamburger:hover {
-    background-color: black;
-}
-
-@media screen and (min-width: 720px) {
     div.menu {
         display: none;
     }
-}
-
-div.menu div.strokes {
-    width: 100%;
-    height: 3px;
-    margin: 0 0 8px 0;
-    background: white;
-    transition: transform 0.3s, opacity 0.1s;
-}
-
-.hide {
-    opacity: 0;
-    transform: translateX(-42px);
-}
-
-.animate0 {
-    transform: rotate(45deg) translateY(10px) translateX(9px);
-}
-
-.animate2 {
-    transform: rotate(-45deg) translateY(-7px) translateX(5px);
-}
-
-.dropdown {
-    background-color: rgba(80, 80, 80, .7);
-    width: 170px;
-    visibility: hidden;
-    opacity: 0;
-    transition: .3s;
-}
-
-.show {
-    position: absolute;
-    visibility: visible;
-    opacity: 1;
-    transition: .3s;
-}
-
-.dropdown ul li a {
-    line-height: .8em;
-    padding: .8em;
-    float: none;
-    display: block;
-    text-align: left;
-    border-top: 1px solid rgba(10, 10, 10, .2);
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(.8);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@font-face {
-    font-family: Brush;
-    src: url(Brusher-Regular.ttf);
 }
 
 
