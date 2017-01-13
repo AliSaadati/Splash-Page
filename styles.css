@@ -222,6 +222,15 @@ div.menu div.strokes {
     padding: 50px;
     font-family: inherit;
     font-size: 2em;
+    position: relative;
+}
+
+.hero {
+    float: right;
+    border-radius: 200px;
+    overflow: hidden;
+    opacity: .7;
+    margin: 10px;
 }
 
 
