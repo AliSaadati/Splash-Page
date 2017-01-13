@@ -5,7 +5,7 @@
         , icon = document.querySelector(".hamburger")
         , dropdownmenu = document.querySelector(".dropdown")
         , dropdownResume = document.querySelector("#dropdown-r");
-    var mq = window.matchMedia("(min-width: 720px)");
+    var mq = window.matchMedia("(min-width: 710px)");
 
     function transformStart() {
         if (dropdownmenu.classList.contains("show")) {
@@ -34,3 +34,15 @@
     icon.addEventListener("click", transformStart);
     dropdownResume.addEventListener("click", dropdownResumeCheck);
 })();
+window.onscroll = function () {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        var footerIcons = document.querySelectorAll(".media");
+        footerIcons[0].classList.add("show");
+        setTimeout(function () {
+            footerIcons[1].classList.add("show");
+        }, 200);
+        setTimeout(function () {
+            footerIcons[2].classList.add("show");
+        }, 400);
+    }
+};
