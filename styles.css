@@ -235,7 +235,7 @@ div.menu div.strokes {
 /***** Content > Projects *****/
 
 #projects {
-    height: 600px;
+    height: 2000px;
     background-image: url(Background.png);
 }
 
@@ -245,7 +245,7 @@ div.menu div.strokes {
     font-size: 3em;
 }
 
-#projects .project-img {
+#projects .project {
     position: relative;
     margin: 60px;
     box-sizing: border-box;
@@ -255,14 +255,22 @@ div.menu div.strokes {
     border-style: solid;
     border-color: lightgoldenrodyellow;
     filter: grayscale(1) blur(1px);
-    transition: .3s;
+    transition: .25s ease-out;
     cursor: pointer;
-    background-image: url(images/production/Parking_Structure_Crop.png);
-    background-size: cover;
     display: flex;
 }
 
-#projects .project-img>div {
+#projects .plm {
+    background-image: url(images/production/Parking_Structure_Crop.png);
+    background-size: cover;
+}
+
+#projects .gi {
+    background-image: url(images/production/Wheat_Sharp_Crop.png);
+    background-size: cover;
+}
+
+#projects .project>div {
     position: absolute;
     background-color: rgba(10, 10, 10, .3);
     padding: 5% 0;
@@ -270,14 +278,14 @@ div.menu div.strokes {
     width: 100%;
     text-align: center;
     font-size: 2em;
-    transition: .3s;
+    transition: .25s ease-out;
 }
 
-#projects .project-img:hover>div {
+#projects .project:hover>div {
     font-size: 2.2em;
 }
 
-#projects .project-img:hover {
+#projects .project:hover {
     width: 450px;
     height: 450px;
     filter: grayscale(0) blur(0px);
