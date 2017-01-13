@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Lora', serif;
+    font-family: 'Fredericka the Great', serif;
 }
 
 
@@ -15,8 +15,9 @@
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: rgba(80, 80, 80, .75);
+    background-color: rgba(80, 80, 80, .8);
     z-index: 1;
+    border-bottom: 1px solid rgba(10, 10, 10, .2);
 }
 
 ul {
@@ -25,6 +26,11 @@ ul {
 
 .navbar > ul li {
     float: right;
+    border-left: 1px solid rgba(10, 10, 10, .2);
+}
+
+.navbar > ul li:first-child {
+    border-right: 1px solid rgba(10, 10, 10, .2);
 }
 
 .navbar > ul li li {
@@ -39,7 +45,7 @@ ul {
 
 .navbar > ul ul {
     position: absolute;
-    background-color: rgba(80, 80, 80, .75);
+    background-color: rgba(80, 80, 80, .8);
 }
 
 .navbar > ul li:hover li {
@@ -57,8 +63,8 @@ ul {
 }
 
 .navbar li a:hover {
-    background-color: black;
-    transition: .35s;
+    background-color: rgb(150, 6, 6);
+    transition: .2s;
 }
 
 .logo {
@@ -92,14 +98,14 @@ div.menu {
     width: 60px;
     height: 100%;
     float: left;
-    transition: .5s;
+    transition: .2s;
     visibility: hidden;
     display: none;
     cursor: pointer;
 }
 
 .hamburger:hover {
-    background-color: black;
+    background-color: rgb(150, 6, 6);
 }
 
 div.menu div.strokes {
@@ -125,8 +131,8 @@ div.menu div.strokes {
 
 .dropdown {
     position: absolute;
-    background-color: rgba(80, 80, 80, .75);
-    top: 60px;
+    background-color: rgba(80, 80, 80, .8);
+    top: 61px;
     width: 200px;
     visibility: hidden;
     opacity: 0;
@@ -144,7 +150,8 @@ div.menu div.strokes {
     float: none;
     display: block;
     text-align: left;
-    border-top: 1px solid rgba(10, 10, 10, .2);
+    border-bottom: 1px solid rgba(10, 10, 10, .2);
+    border-right: 1px solid rgba(10, 10, 10, .2);
 }
 
 .dropdown ul li {
@@ -166,7 +173,7 @@ div.menu div.strokes {
 }
 
 #dropdown-r+ul li a:hover {
-    background-color: black;
+    background-color: rgb(150, 6, 6);
 }
 
 #dropdown-r::after {
@@ -218,19 +225,107 @@ div.menu div.strokes {
 
 /****** Content > About ******/
 
-.about {
+#about {
     padding: 50px;
     font-family: inherit;
-    font-size: 2em;
-    position: relative;
+    font-size: 1.7em;
 }
 
-.hero {
-    float: right;
-    border-radius: 200px;
-    overflow: hidden;
-    opacity: .7;
-    margin: 10px;
+
+/***** Content > Projects *****/
+
+#projects {
+    height: 600px;
+    background-image: url(Background.png);
+}
+
+#projects .project-heading {
+    color: lightgoldenrodyellow;
+    text-align: center;
+    font-size: 3em;
+}
+
+#projects .project-img {
+    position: relative;
+    margin: 60px;
+    box-sizing: border-box;
+    width: 400px;
+    height: 400px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: lightgoldenrodyellow;
+    filter: grayscale(1) blur(1px);
+    transition: .3s;
+    cursor: pointer;
+    background-image: url(images/production/Parking_Structure_Crop.png);
+    background-size: cover;
+    display: flex;
+}
+
+#projects .project-img>div {
+    position: absolute;
+    background-color: rgba(10, 10, 10, .3);
+    padding: 5% 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    transition: .3s;
+}
+
+#projects .project-img:hover>div {
+    font-size: 2.2em;
+}
+
+#projects .project-img:hover {
+    width: 450px;
+    height: 450px;
+    filter: grayscale(0) blur(0px);
+}
+
+
+/***** Content > Contact *****/
+
+#contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+#contact ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 5px;
+    cursor: pointer;
+    float: left;
+}
+
+#contact ul li div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+}
+
+#contact ul li .media {
+    visibility: hidden;
+    position: absolute;
+    max-width: auto;
+    max-height: 40px;
+    transition: .2s linear;
+}
+
+#contact ul li .media.show {
+    visibility: visible;
+    animation: surface 1.3s linear 1 forwards;
+}
+
+#contact ul li img:hover {
+    max-height: 60px;
+    max-height: auto;
 }
 
 
@@ -248,6 +343,41 @@ div.menu div.strokes {
     }
 }
 
+@keyframes surface {
+    0% {
+        transform: translateY(400%);
+        animation-timing-function: cubic-bezier(0, .92, .69, .99);
+    }
+    30% {
+        transform: translateY(-64%);
+        animation-timing-function: cubic-bezier(.69, .01, .99, .58);
+    }
+    50% {
+        transform: translateY(32%);
+        animation-timing-function: cubic-bezier(.01, .42, .83, 1);
+    }
+    65% {
+        transform: translateY(-32%);
+        animation-timing-function: cubic-bezier(.36, .01, 1, .83);
+    }
+    75% {
+        transform: translateY(16%);
+        animation-timing-function: cubic-bezier(0, .92, .69, .99);
+    }
+    85% {
+        transform: translateY(-8%);
+        animation-timing-function: cubic-bezier(.26, .02, .99, .66);
+    }
+    93% {
+        transform: translateY(8%);
+        animation-timing-function: cubic-bezier(0, .92, .69, .99);
+    }
+    100% {
+        transform: translateY(0%);
+        animation-timing-function: cubic-bezier(.97, .01, .99, .61);
+    }
+}
+
 
 /***** Fonts *****/
 
@@ -259,7 +389,7 @@ div.menu div.strokes {
 
 /***** Responsive Design *****/
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 719px) {
     .navbar > ul li {
         display: none;
     }
@@ -281,6 +411,3 @@ div.menu div.strokes {
         display: none;
     }
 }
-
-
-/*    transition: .5s cubic-bezier(.8, .2, .2, .7);*/
