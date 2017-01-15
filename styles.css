@@ -229,6 +229,7 @@ div.menu div.strokes {
     padding: 50px;
     font-family: inherit;
     font-size: 1.7em;
+    min-width: 670px;
 }
 
 
@@ -236,10 +237,11 @@ div.menu div.strokes {
 
 #projects {
     position: relative;
-    height: 2000px;
+    height: 1200px;
+    min-width: 670px;
     background-image: url(Background.png);
     margin: 0;
-    paddinng: 0;
+    padding: 0;
 }
 
 #projects .project-heading {
@@ -275,9 +277,7 @@ div.menu div.strokes {
     background-size: cover;
 }
 
-#projects .projects-container {
-    font-size: 0;
-}
+#projects .projects-container {}
 
 #projects .project-wrapper {
     position: relative;
@@ -289,18 +289,21 @@ div.menu div.strokes {
 }
 
 #projects .project:hover>div {
-    font-size: 2.2em;
+    font-size: 2.4em;
+    height: 90px;
 }
 
 #projects .project>div {
     position: absolute;
-    background-color: rgba(10, 10, 10, .3);
+    background-color: rgba(10, 10, 10, .4);
     bottom: 0;
     width: 100%;
     height: 80px;
     text-align: center;
-    font-size: 2em;
+    justify-content: center;
+    font-size: 2.2em;
     transition: .25s ease-out;
+    color: lightgoldenrodyellow;
 }
 
 #projects .project:hover {
@@ -441,5 +444,6 @@ div.menu div.strokes {
 @media screen and (min-width: 900px) {
     #projects .project-wrapper {
         width: 50%;
+        margin: 0 -2px;
     }
 }
